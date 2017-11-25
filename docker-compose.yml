@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+     - "8000:3001"
+    restart: always
+    environment:
+      - DB_HOST=db
+      - DB_PORT=33306
+      - DB_PASSWORD=admin
+      - DB_USER=root
+      - DB_DATABASE=spgroup
+    network_mode: "bridge"
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER : root
+      MYSQL_DATABASE: spgroup
+      MYSQL_PORT : 33306
+    ports:
+      - "33306:3306"
+    network_mode: "bridge"
+
