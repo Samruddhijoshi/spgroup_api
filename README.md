@@ -30,4 +30,7 @@ CREATE TABLE `users` (
 
 
 ```
+API Doc can be accessed on localhost:3001
+API defination 
+http://localhost:3001/users/...
 
